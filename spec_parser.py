@@ -292,13 +292,17 @@ def parse_spec_docx(filepath):
             })
 
         # --- 页眉 ---
-        if "页眉字样为" in text and "江西服装学院" in text:
+        if "页眉字样为" in text:
+            # 提取引号中的页眉文字
+            import re
+            m = re.search(r"[「"\"](.*?)[」\""]", text)
+            header_val = m.group(1) if m else "XXX大学毕业设计（论文）"
             prose_rules.append({
                 "section": "page_header",
                 "label": "页眉",
                 "font": "宋体", "size_pt": 9, "size_name": "小五号",
                 "alignment": "居中",
-                "header_text": "江西服装学院毕业设计（论文）",
+                "header_text": header_val,
                 "source": f"P{i}"
             })
 

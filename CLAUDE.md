@@ -32,8 +32,8 @@ thesis-checker/
 
 ## 运行方式
 ```bash
-cd /Users/zhong/Desktop/江西服装学院/毕设/毕业设计格式检测/thesis-checker
-pip install flask python-docx
+cd thesis-checker
+pip install -r requirements.txt
 python app.py
 # 访问 http://localhost:5001
 ```

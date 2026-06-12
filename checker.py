@@ -1,6 +1,5 @@
 """
 毕业设计格式检测核心模块
-基于江西服装学院网络与新媒体专业毕业设计（论文）指导手册
 """
 
 import re
@@ -1052,7 +1051,7 @@ def check_page_setup(doc, issues, meta=None):
 def check_header(doc, issues, meta=None, classified=None):
     """检测页眉（仅检查正文部分）"""
     meta = meta or {}
-    expected = meta.get("header_text", "江西服装学院毕业设计（论文）")
+    expected = meta.get("header_text", "XXX大学毕业设计（论文）")
 
     non_header_classes = {"reference_title", "reference_entry",
                           "acknowledgment_title", "acknowledgment_body",
@@ -1120,7 +1119,7 @@ def check_header(doc, issues, meta=None, classified=None):
                 location=f"页眉 (第 {i+1} 节)",
                 severity=Severity.ERROR,
                 category="页眉",
-                description="页眉内容应为「江西服装学院毕业设计（论文）」",
+                description=f"页眉内容应为「{expected}」",
                 expected=expected,
                 actual=actual_text,
                 content=actual_text
