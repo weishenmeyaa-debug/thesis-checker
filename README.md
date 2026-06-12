@@ -47,4 +47,4 @@ Windows 用户也可以双击 `start.bat`，Mac 用户双击 `start.command`。
 
 ## 许可证
 
-MIT
+[CC BY-NC-SA 4.0](LICENSE) — 非商业用途可自由使用和修改，需保留署名，修改后以相同协议分享。
